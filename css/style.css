@@ -1,0 +1,261 @@
+body{
+    margin: 0;
+    padding-top: 50px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 15%;
+}
+.pop-fade{
+    background: rgba(0,0,0,.9);
+    position: absolute; 
+    z-index: 10;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+i{
+    cursor: pointer;
+}
+
+input.border-down{
+    border: 0 !important;
+    border-bottom: 2px solid #a4a4a4 !important; 
+    outline: 0;
+}
+.wrapper{
+    width: 50%;
+    margin: 0px auto;
+    box-shadow: 1px 1px 3px gray;
+    /* padding: 20px; */
+    border-radius: 3px;
+    height: 80%;
+}
+
+.flex-wrapper {
+    display: flex;
+    /* height: 580px;  */
+}
+
+.contacts-list {
+    flex-grow: 1;
+    flex-basis: 50%;
+    padding: 0 5px; 
+    /* overflow: scroll;
+    overflow-x: hidden;
+    height: 100%; */
+}
+
+.contact-list{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 420px;
+    padding-bottom: 30px;
+
+}
+.contact-list > .contact-group{
+    margin-top: 30px;
+}
+.list-top-menu{
+    padding: 20px 10px;
+    display: flex;
+    color: darkslategrey;
+}
+.list-top-menu h3{
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    flex-grow: 1;
+}
+.form-wrap{
+    text-align: center;
+    margin-bottom: 20px;
+}
+input.input-control{
+    width: 94%;
+    height: 38px;
+    padding: 8px;
+    letter-spacing: 2px;
+    border: 1px solid darkslategray;
+    font-size: 1em;
+    font-weight: bold;
+    color: darkslategray;
+    box-sizing: border-box;
+}
+.contacts-details {
+    background-color: #0064b2;
+    flex-grow: 1;
+    color: #fff;
+    flex-basis: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.contact-options{
+    display: flex;
+    justify-content: flex-end;
+}
+.contact-options i{
+    margin: 20px;
+}
+
+.user-details{
+    margin: 30px 0px 0px 15px;
+}
+.user-photo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.user-photo h4{
+    margin-left: 17px;
+}
+.user-photo img{
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+}
+.details-group{
+    margin-bottom: 15px;
+}
+.label h3{
+    text-transform: capitalize;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.clip-bottom{
+    padding-top: 20px;
+}
+.socialize{
+    display: flex;
+}
+
+.socialize a{
+    flex-basis: calc(100%/5);
+    color: #fff;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+span.group-alpha {
+    margin-left: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: indigo;
+}
+ul.list-group {
+    list-style: none;
+    padding: 0;
+}
+
+ul.list-group li{
+    min-height: 40px;
+    height: auto;
+    line-height: 40px;
+    width: 92%;
+    margin-bottom: 7px;
+    /* border: 1px solid red; */
+    padding-left: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.modal{
+    width: 35%;
+    min-height: 300px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px gray;
+    position: absolute;
+    top: 0%;
+    left: 32%;
+    box-sizing: border-box;
+    padding: 30px;
+    z-index: 20;
+    display: none;
+    z-index: 1000;
+    transition: opacity 0.1s ease-in;
+}
+
+.image-select{
+    display: flex;
+    justify-content: center;
+}
+.selected-img{
+    border: 5px solid lime;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.image-select img{
+    width: 18%;
+    margin-right: 7%;
+    border-radius: 130px;
+    cursor: pointer;
+    height: 70px;
+}
+.modal-header{
+    display: flex;
+    /* justify-content: flex-end; */
+    padding: 7px 7px 25px 7px;
+}
+
+.modal-header h1{
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5em;
+}
+.modal-header i{
+    flex-grow: 0;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+.modal-footer{
+    padding: 7px;
+    margin-top: 30px;
+}
+
+.btn{
+    padding: 8px 20px;
+    font-size: 1.1em;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+.btn-create{
+    position: absolute;
+    bottom: 20px; 
+    right: 43px;
+    background-color: #0064b2;
+}
+.fade{
+    animation: fade 2s ease;
+}
+@keyframes fade{
+    from{ opacity: 0}
+    to{ opacity: 1}
+}
+
+@media screen and (max-width: 768px){
+    .flex-wrapper{
+        flex-direction: row;
+    }
+    .wrapper{
+        width: 98%;
+        height: 100vh;
+    }
+    .contacts-details{
+        display: none;
+        flex-grow: 0;
+    }
+
+    .contacts-list{
+        flex-basis: 100%;
+        width: 100%;
+    }
+}

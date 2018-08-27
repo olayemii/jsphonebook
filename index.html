@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Phonebook</title>
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" /> 
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet">
+        <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <script type="text/javascript" src="js/phonebook.js"></script>
+    </head>
+    <body>
+        <div class="pop-fade" id="pop-fade" style="display: none"></div>
+        <div class="wrapper">
+            <main id="main">
+                <div class="flex-wrapper">
+                    <div class="contacts-list">
+                        <div class="list-top-menu">
+                            <h3>contacts</h3>
+                            <i id="plus" class="material-icons btn-modal-toggle" data-modal="addUserModal">add</i>
+                            <i class="material-icons">linear_scale</i>
+                        </div>
+                        <div class="form-wrap">
+                            <input type="text" class="input-control" placeholder="Search">
+                        </div>
+                        <div class="contact-list" id="myContactList">
+                            <!-- DOM Manipulation  -->
+                        </div>
+                    </div>
+                    <div class="contacts-details">
+                        <div class="contact-options">
+                            <i class="material-icons" id="fav-contact">star</i>
+                            <i class="material-icons btn-modal-toggle" id="editContactModal" data-modal="editUserModal">edit</i>
+                            <i class="material-icons">share</i>
+                            <i class="material-icons">arrow_drop_down</i>
+                        </div>
+                        <div class="user-details">
+                            <div class="user-photo">
+                                <img src="img/user1.png" id="userPhotoSpace" alt="UserPhoto">
+                                <span><h4 id="cUserName">OLAYEMII GARUBA</h4></span>
+                            </div>
+                            <div class="other-user-details">
+                                <div class="details-group">
+                                    <div class="label">
+                                        <h3>Phone number</h3>
+                                    </div>
+                                    <span id="uPhoneNumber">07033195813</span>
+                                </div>
+                                <div class="details-group">
+                                    <div class="label">
+                                        <h3>Other phone</h3>
+                                    </div>
+                                    <span id="uOtherPhone">09024561557</span>
+                                </div>
+                                <div class="details-group">
+                                    <div class="label">
+                                        <h3>Email</h3>
+                                    </div>
+                                    <span id="uEmailAddress">donyemisco@gmail.com</span>
+                                </div>
+                                <div class="details-group">
+                                    <div class="label">
+                                        <h3>Website</h3>
+                                    </div>
+                                    <span id="uWebsite">https://facebook.com/donyemisco</span>
+                                </div>
+                                <div class="details-group clip-bottom">
+                                    <div class="socialize">
+                                        <a href="" id="facebookSocialize" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+                                        <a href="" id="twitterSocialize" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+                                        <a href="" id="instagramSocialize" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                                        <a href="" id="googleSocialize" target="_blank"><i class="fa fa-google fa-lg"></i></a>
+                                        <a href="" id="linkedinSocialize" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Add User Modal  -->
+                <div class="modal" id="addUserModal">
+                    <form action="#" id="addUserForm">
+                        <div class="modal-header">
+                            <h1>Add Contact</h1>
+                            <i class="fa fa-times close-icon modal-close" id="closeUserModal" data-modal="addUserModal"></i>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="fullname" id="fullname" placeholder="Full name">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="email" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="phone" id="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="otherphone" id="otherphone" placeholder="Other Phone">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="website" id="website" placeholder="Website">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="facebook_id" id="facebook_id" placeholder="Facebook ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="twitter_id" id="twitter_id" placeholder="Twitter ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="linkedin_id" id="linkedin_id" placeholder="LinkedIn ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="instagram_id" id="instagram_id" placeholder="Instagram ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="googleplus_id" id="googleplus_id" placeholder="GooglePlus ID">
+                            </div>
+                            <div class="image-select">
+                                <img src="img/user1.png" class="usr-image" alt="">
+                                <img src="img/user2.png" class="usr-image" alt="">
+                                <img src="img/user3.png" class="usr-image" alt="">
+                                <img src="img/user4.png" class="usr-image" alt="">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-create" id="btnCreateUser" data-form="addUserForm">Create</button>
+                        </div>
+                    </form>
+                </div>
+                <!--End of add user modal  -->
+                <!--Edit User Modal  -->
+                <div class="modal" id="editUserModal">
+                    <form action="#" id="editUserForm">
+                        <div class="modal-header">
+                            <h1>Edit Contact</h1>
+                            <i class="fa fa-times close-icon modal-close" id="closeEditUserModal" data-modal="editUserModal"></i>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="fullname" id="editFullname" placeholder="Full name">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="email" id="editEmail" placeholder="Email">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="phone" id="editPhone" placeholder="Phone">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="otherphone" id="editOtherphone" placeholder="Other Phone">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="website" id="editWebsite" placeholder="Website">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="facebook_id" id="editFacebook" placeholder="Facebook ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="twitter_id" id="editTwitter" placeholder="Twitter ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="linkedin_id" id="editLinkedin" placeholder="LinkedIn ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="instagram_id" id="editInstagram" placeholder="Instagram ID">
+                            </div>
+                            <div class="form-wrap">
+                                <input type="text" class="input-control border-down" data-value="googleplus_id" id="editGoogleplus" placeholder="GooglePlus ID">
+                            </div>
+                            <div class="image-select">
+                                <img src="img/user1.png" class="usr-image" alt="">
+                                <img src="img/user2.png" class="usr-image" alt="">
+                                <img src="img/user3.png" class="usr-image" alt="">
+                                <img src="img/user4.png" class="usr-image" alt="">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-create" id="btnEditUser" data-form="editUserForm">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+                <!--End of edit user modal  -->
+            </main>
+        </div>
+    </body>
+</html>
