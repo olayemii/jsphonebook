@@ -256,7 +256,7 @@ window.addEventListener("load", function(){
     function editContact(contactid, valtoedit = {}){
         for(let keys in valtoedit){
             if (valtoedit.hasOwnProperty(keys)){
-                data[contactid] = valtoedit[keys];
+                data[contactid][keys] = valtoedit[keys];
             }
         }
 
